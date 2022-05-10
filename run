@@ -22,13 +22,15 @@ function csgocopyfiles() {
     cp /home/csgo/csgo-linux/aliases.cfg $SRCDS_DIR/csgo/cfg/aliases.cfg
     cp /home/csgo/csgo-linux/secrets.cfg $SRCDS_DIR/csgo/cfg/secrets.cfg
     cp /home/csgo/csgo-linux/gamemode_competitive_server.cfg $SRCDS_DIR/csgo/cfg/gamemode_competitive_server.cfg
+    cp /home/csgo/csgo-linux/gamemode_casual_server.cfg $SRCDS_DIR/csgo/cfg/gamemode_casual_server.cfg
     chmod +x $SRCDS_DIR/csgo/cfg/autoexec.cfg
     chmod +x $SRCDS_DIR/csgo/cfg/server.cfg
     chmod +x $SRCDS_DIR/csgo/cfg/aliases.cfg
     chmod +x $SRCDS_DIR/csgo/cfg/secrets.cfg
     chomd +x $SRCDS_DIR/csgo/cfg/gamemode_competitive_server.cfg
+    chomd +x $SRCDS_DIR/csgo/cfg/gamemode_casual_server.cfg
 }
 
 function csgo() {
-    $SRCDS_DIR/srcds_run -game csgo -tickrate 128 -console -usercon +game_type 0 +game_mode 1 +mapgroup mg_active +map de_dust2 +sv_setsteamaccount $CSGO_GSLT -net_port_try 1
+    $SRCDS_DIR/srcds_run -game csgo -tickrate 128 -console -usercon +game_type 0 +game_mode 0 +mapgroup mg_active +map de_train +sv_setsteamaccount $CSGO_GSLT -net_port_try 1
 }
